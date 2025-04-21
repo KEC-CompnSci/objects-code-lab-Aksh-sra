@@ -3,35 +3,36 @@ import java.util.Scanner;
 
 public class Question {
     //Instant Variables
-    private String questions;
+    private String question;
     private int totalMarks; 
     private String answer; 
     private String studentAnswer; 
 
 
-    //constructor 
-    public Question(String questions, int totalMarks, String answer, String studentAnswer) {
-    this.question = question; 
-    this.totalMarks = totalMarks; 
-    this.answer = answer;
-    this.studentAnswer = ""; 
+    // Constructor 
+    public Question(String question, int totalMarks, String answer) {
+        this.question = question;
+        this.totalMarks = totalMarks;
+        this.answer = answer;
+        this.studentAnswer = ""; // initialize to empty string
 }
 
-//method to ask question
-public void AskQuestions(Scanner Scanner) {
-    Systren.out.println(question + "(" + totalMarks + "marks)"); 
-    System.out.println("YourAnswer: ");
-    studentAnswer = scanner.nextLine(); 
+//AskQuestion method as specified
+public void AskQuestion(Scanner scanner) {
+    System.out.println(question + " (" + totalMarks + " marks)");
+    System.out.print("Your answer: ");
+    this.studentAnswer = scanner.nextLine(); // read user input
 }
 
 //method to check answer 
 public int CheckAnswer() {
-    if (studentAnswer != null && studentAnswer.equals(answer)) {
-        return totalMarks;
+    if (this.answer.equals(this.studentAnswer)) {
+        return this.totalMarks;
     } else {
         return 0;
     }
 }
 
 }
+
 
